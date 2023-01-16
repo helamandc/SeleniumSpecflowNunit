@@ -15,7 +15,6 @@ namespace SeleniumSpecflowNunit.StepDefinitions
         string test_url = "https://www.google.com/";
         IWebDriver driver;
         string itemname = "Praemium";
-        string itemURL = "https://www.praemium.com/";
 
         [Given(@"I open Google search engine")]
         public void GivenIOpenGoogleSearchEngine()
@@ -45,9 +44,9 @@ namespace SeleniumSpecflowNunit.StepDefinitions
         [Then(@"I would see results about Praemium")]
         public void ThenIWouldSeeResultsAboutPraemium()
         {
-            IWebElement itemtext = driver.FindElement(By.ClassName("d8lRkd"));
+            IWebElement itemtext = driver.FindElement(By.ClassName("yuRUbf"));
             string gettext = itemtext.Text;
-            Assert.That(gettext.Contains(itemURL), Is.True);
+            Assert.That(gettext.Contains(itemname), Is.True);
         }
 
         [AfterScenario]
